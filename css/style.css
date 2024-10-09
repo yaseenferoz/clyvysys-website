@@ -1,0 +1,752 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Inside your main CSS file */
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../fonts/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../fonts/Inconsolata-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2a2a2a;
+    /* Replace with your chosen color */
+    color: #ffffff;
+    /* Replace with your chosen second color */
+}
+
+
+
+body {
+    font-family: 'Inconsolata', monospace;
+    /* Replace with the chosen font */
+    color: #666666 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inconsolata', monospace;
+    /* Or use a different font for headings */
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
+
+a {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
+
+label {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
+
+/* Apply the coding font to the brand name and symbols */
+.navbar-brand {
+
+    display: flex !important;
+
+}
+
+/* Style for symbols to differentiate from the main text */
+.logo-symbol {
+    font-weight: 400;
+    /* Lighter weight for symbols */
+    color: #ff5733;
+    /* Accent color for symbols (adjust as desired) */
+    font-size: 1.3rem;
+    /* Optional: adjust size to make symbols slightly smaller */
+}
+
+/* Style for the "sys" part in the brand name */
+.logo-sys {
+    font-weight: 400;
+    /* Normal weight for "sys" */
+    color: #333;
+    /* Secondary color to differentiate it */
+}
+
+/* Initial transparent header */
+/* Initial transparent header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    /* Fully transparent initially */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow */
+}
+
+/* General form input styling */
+input,
+textarea {
+    font-family: 'Inconsolata', monospace;
+    /* Ensure main input font matches placeholder */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+    color: #666;
+    opacity: 1;
+}
+
+/* Specific styling for different input types, if needed */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: #999;
+    /* Example of using a different color */
+    font-weight: 300;
+    /* Light weight for placeholders */
+}
+
+
+
+.logo h1 {
+    font-family: 'Arial', sans-serif;
+    /* Replace with your preferred font */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    /* Matches the text color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section Styling */
+/* Hero Section Styling */
+#hero {
+    background: linear-gradient(135deg, #1e3c72, #007bff);
+}
+
+.home-services {
+    background: #007bff !important;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1e3c72, #007bff);
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.img-fluid {
+    max-width: 300px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    /* Or your preferred font */
+}
+
+.hero img {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    /* Button color contrasting background */
+    color: #333333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero Section Responsive Styling */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+}
+
+/* Services Section Styling */
+#services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    /* Light background for contrast */
+    color: #333333;
+}
+
+#services h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+.service-cards-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card-home {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-card-home:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.service-card-home h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #2a2a2a;
+}
+
+.service-card-home p {
+    font-size: 1em;
+    color: #666666;
+}
+
+#about h2 {
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.1em;
+}
+
+#contact h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact .form-group label {
+    font-weight: bold;
+}
+
+#contact button {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#contact .col-md-6 {
+    margin-bottom: 20px;
+    /* Adds spacing on smaller screens */
+}
+
+footer {
+    font-size: 0.9em;
+}
+
+footer p,
+footer a {
+    margin: 0;
+    color: #ffffff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Adjusting header and navigation for mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    /* Make navigation links more compact */
+    .navbar-nav .nav-link {
+        font-size: 1em;
+    }
+}
+
+/* Hero Section Responsive Styling */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+}
+
+/* Services Section Responsive Styling */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+        /* Make cards full width on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+/* Padding adjustments for About and Contact sections on mobile */
+@media (max-width: 768px) {
+
+    #about,
+    #contact {
+        padding: 30px 10px;
+    }
+
+    #about h2,
+    #contact h2 {
+        font-size: 1.8em;
+    }
+
+    #about p,
+    #contact p {
+        font-size: 1em;
+    }
+}
+
+.btn:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.btn {
+    background: linear-gradient(135deg, #1e3c72, #007bff);
+    color: #ffffff !important;
+}
+
+/* Capability Card Styling */
+/* Capability Card Styling with Equal Heights */
+.capability-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Make the card take full height of the container */
+}
+
+/* Row container to ensure equal height */
+.row.text-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.capability-card h4 {
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.capability-card p {
+    color: #666666;
+    font-size: 0.95em;
+    margin-bottom: 0;
+    flex-grow: 1;
+    /* Ensures that the paragraph takes up available space for uniformity */
+}
+
+/* Service Card Styling */
+.service-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    /* Reduced padding */
+    margin-bottom: 20px;
+    /* Reduced margin between cards */
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h4 {
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 0.95em;
+    margin-bottom: 0;
+}
+
+/* Reducing Row Padding */
+.row {
+    margin: 0 -10px;
+    /* Reducing row spacing */
+}
+
+/* Column Padding Adjustments */
+.col-sm-6,
+.col-md-4,
+.col-lg-3 {
+    padding: 0 10px;
+    /* Reducing column padding */
+}
+
+.row.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-link.active {
+    color: #007bff;
+    /* Adjust this color to your theme */
+    font-weight: bold;
+    border-bottom: 2px solid #ff5733;
+    /* Optional: add an underline or border */
+}
+
+/* Logo Styling */
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    /* Choose a modern font */
+    font-weight: bold;
+    font-size: 30px !important;
+    /* Adjust size */
+    color: #007bff;
+    /* Primary color */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-symbol {
+    color: #ff5733;
+    /* Accent color for symbols */
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.logo-sys {
+    color: #007bff;
+    /* Secondary color for "sys" */
+}
+
+.navbar-brand:hover {
+    color: #007bff;
+    /* Hover effect for the brand */
+}
+
+.logo-symbol,
+.logo-sys {
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover .logo-symbol,
+.navbar-brand:hover .logo-sys {
+    color: #ff5733;
+    /* Hover effect for symbols and "sys" */
+}
+
+/* Success Message Styling */
+#my-form-status.success {
+    color: #007bff;
+    /* Green color for success */
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Error Message Styling */
+#my-form-status.error {
+    color: #ff5733;
+    /* Red color for error */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Fade-in Animation for Success/Error Message */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background Image Styling for Contact Information */
+.contact-bg {
+    background-image: url('../images/undraw_delivery_address_re_cjca.svg');
+    /* Replace with actual image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    padding: 40px;
+    border-radius: 8px;
+    color: #333333;
+    min-height: 100%;
+}
+
+/* Positioning the Contact heading at the top right */
+.contact-bg h3 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    color: #333333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Positioning Email and Phone independently */
+.contact-email {
+    position: absolute;
+    bottom: 50px;
+    /* Positions Email above the Phone */
+    left: 20px;
+    z-index: 2;
+    color: #333333;
+    font-size: 14px;
+}
+
+.contact-phone {
+    position: absolute;
+    bottom: 20px;
+    /* Positions Phone lower than Email */
+    left: 20px;
+    z-index: 2;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* Optional: Overlay for better readability */
+.contact-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .contact-bg {
+        padding: 20px;
+        /* Reduce padding on smaller screens */
+        background-size: 50%;
+        /* Resize background image for mobile */
+        background-position: bottom;
+        /* Adjust background position */
+        text-align: left;
+        /* Align text for a cleaner layout */
+    }
+
+    .contact-bg h3 {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-email,
+    .contact-phone {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .contact-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        z-index: 1;
+    }
+
+}
+
+#cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+#cookie-consent p {
+    display: inline;
+    margin-right: 10px;
+}
+
+#accept-cookies {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#accept-cookies:hover {
+    background-color: #45a049;
+}
+
+/* Typing Effect */
+/* Typing Effect */
+.typing-effect {
+    overflow: hidden;
+    /* Ensures the text is hidden as it types */
+    white-space: nowrap;
+    /* Keeps text on a single line */
+    border-right: 4px solid #ff5733;
+    /* Blinking cursor effect */
+    font-family: 'Fira Code', monospace;
+    /* Ensure the font matches the site's coding font */
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Styling for Navbar Brand */
+.navbar-brand h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.5rem;
+    /* Adjust based on your desired size */
+}
+
+/* Styling for 'sys' part */
+.logo-sys {
+    display: inline-block;
+    vertical-align: bottom;
+    /* Aligns with the baseline of 'Clyvy' */
+    font-size: 1.5rem;
+    /* Matches the font size of 'Clyvy' */
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.2s ease-in;
+}
+
+/* Hover effect for typing */
+.navbar-brand:hover .logo-sys {
+    width: 0;
+    animation: typingEffect 1.5s steps(10, end) forwards;
+}
+
+/* Typing animation */
+@keyframes typingEffect {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
