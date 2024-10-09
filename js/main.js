@@ -3,71 +3,77 @@ document.addEventListener("DOMContentLoaded", function () {
     var submitButton = document.getElementById("my-form-button");
     var status = document.getElementById("my-form-status");
 
-    async function handleSubmit(event) {
-        event.preventDefault(); // Prevent default form submission
+    if (form && submitButton && status) { // Check if elements exist
+        async function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
 
-        // Disable the submit button to prevent multiple submissions
-        submitButton.disabled = true;
-        submitButton.innerText = "Sending..."; // Change button text to indicate sending
+            // Disable the submit button to prevent multiple submissions
+            submitButton.disabled = true;
+            submitButton.innerText = "Sending..."; // Change button text to indicate sending
 
-        // Clear the status message
-        status.innerHTML = "";
-        status.classList.remove("success", "error"); // Remove any existing classes
+            // Clear the status message
+            status.innerHTML = "";
+            status.classList.remove("success", "error"); // Remove any existing classes
 
-        // Collect form data
-        var data = new FormData(form);
+            // Collect form data
+            var data = new FormData(form);
 
-        try {
-            // Send form data to Formspree
-            let response = await fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+            try {
+                // Send form data to Formspree
+                let response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Handle the response
-            if (response.ok) {
-                status.innerHTML = "Thanks for your submission!";
-                status.classList.add("success"); // Add success class for styling
-                form.reset(); // Reset the form
-            } else {
-                // Handle errors returned by Formspree
-                let responseData = await response.json();
-                if (responseData.errors) {
-                    status.innerHTML = responseData.errors.map(error => error.message).join(", ");
+                // Handle the response
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your submission!";
+                    status.classList.add("success"); // Add success class for styling
+                    form.reset(); // Reset the form
                 } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form.";
+                    // Handle errors returned by Formspree
+                    let responseData = await response.json();
+                    if (responseData.errors) {
+                        status.innerHTML = responseData.errors.map(error => error.message).join(", ");
+                    } else {
+                        status.innerHTML = "Oops! There was a problem submitting your form.";
+                    }
+                    status.classList.add("error"); // Add error class for styling
                 }
+            } catch (error) {
+                // Handle network or other errors
+                status.innerHTML = "Oops! There was a problem submitting your form.";
                 status.classList.add("error"); // Add error class for styling
+            } finally {
+                // Re-enable the submit button and reset its text
+                submitButton.disabled = false;
+                submitButton.innerText = "Submit";
             }
-        } catch (error) {
-            // Handle network or other errors
-            status.innerHTML = "Oops! There was a problem submitting your form.";
-            status.classList.add("error"); // Add error class for styling
-        } finally {
-            // Re-enable the submit button and reset its text
-            submitButton.disabled = false;
-            submitButton.innerText = "Submit";
         }
+
+        // Add event listener to handle form submission
+        form.addEventListener("submit", handleSubmit);
     }
 
-    // Add event listener to handle form submission
-    form.addEventListener("submit", handleSubmit);
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Check if consent cookie is already set
-    if (!getCookie('cookieConsent')) {
-        // Show the cookie consent banner
-        document.getElementById("cookie-consent").style.display = "block";
-    }
+    // Cookie Consent Banner
+    const cookieConsent = document.getElementById("cookie-consent");
+    const acceptCookies = document.getElementById("accept-cookies");
 
-    // Handle the "Accept" button click
-    document.getElementById("accept-cookies").addEventListener("click", function () {
-        setCookie('cookieConsent', 'true', 365); // Set consent cookie for 1 year
-        document.getElementById("cookie-consent").style.display = "none"; // Hide banner
-    });
+    if (cookieConsent && acceptCookies) {
+        // Show the cookie consent banner if not already accepted
+        if (!getCookie('cookieConsent')) {
+            cookieConsent.style.display = "block";
+        }
+
+        // Handle the "Accept" button click
+        acceptCookies.addEventListener("click", function () {
+            setCookie('cookieConsent', 'true', 365); // Set consent cookie for 1 year
+            cookieConsent.style.display = "none"; // Hide banner
+        });
+    }
 });
 
 // Set a cookie
