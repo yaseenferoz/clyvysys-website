@@ -108,8 +108,81 @@ window.addEventListener("scroll", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
     const typingText = document.getElementById("typing-text");
-    typingText.style.width = ""; // This will trigger the CSS typing effect
+    const fullText = "Crafting Your Vision with Our Bliss"; // Full text to type
+    typingText.innerHTML = ""; // Clear any initial text in the element
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < fullText.length) {
+            typingText.innerHTML += fullText.charAt(index);
+            index++;
+            setTimeout(typeCharacter, 100); // Adjust speed here (100ms per character)
+        } else {
+            // Once done typing, make the cursor blink
+            typingText.classList.add("blinking-cursor");
+        }
+    }
+
+    typeCharacter(); // Start the typing effect
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const typingText = document.getElementById("typing-text-service");
+    const fullText = "Transforming ideas into powerful digital experiences through our wide range of services."; // Full text to type
+    typingText.innerHTML = ""; // Clear any initial text in the element
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < fullText.length) {
+            typingText.innerHTML += fullText.charAt(index);
+            index++;
+            setTimeout(typeCharacter, 100); // Adjust speed here (100ms per character)
+        } else {
+            // Once done typing, make the cursor blink
+            typingText.classList.add("blinking-cursor");
+        }
+    }
+
+    typeCharacter(); // Start the typing effect
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const typingText = document.getElementById("typing-text-about");
+    const fullText = "Driven by innovation and excellence, Clyvysys is here to empower businesses through digital transformation and strategic solutions."; // Full text to type
+    typingText.innerHTML = ""; // Clear any initial text in the element
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < fullText.length) {
+            typingText.innerHTML += fullText.charAt(index);
+            index++;
+            setTimeout(typeCharacter, 100); // Adjust speed here (100ms per character)
+        } else {
+            // Once done typing, make the cursor blink
+            typingText.classList.add("blinking-cursor");
+        }
+    }
+
+    typeCharacter(); // Start the typing effect
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const typingText = document.getElementById("typing-text-contact");
+    const fullText = "We’re here to help. Reach out to us for any inquiries, consultations, or support."; // Full text to type
+    typingText.innerHTML = ""; // Clear any initial text in the element
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < fullText.length) {
+            typingText.innerHTML += fullText.charAt(index);
+            index++;
+            setTimeout(typeCharacter, 100); // Adjust speed here (100ms per character)
+        } else {
+            // Once done typing, make the cursor blink
+            typingText.classList.add("blinking-cursor");
+        }
+    }
+
+    typeCharacter(); // Start the typing effect
+});
+
 
 // Delete a cookie
 function eraseCookie(name) {

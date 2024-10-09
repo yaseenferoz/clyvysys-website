@@ -683,36 +683,27 @@ footer a:hover {
 }
 
 /* Typing Effect */
-/* Typing Effect */
 .typing-effect {
-    overflow: hidden;
-    /* Ensures the text is hidden as it types */
-    white-space: nowrap;
-    /* Keeps text on a single line */
-    border-right: 4px solid #ff5733;
-    /* Blinking cursor effect */
     font-family: 'Fira Code', monospace;
-    /* Ensure the font matches the site's coding font */
-    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word; /* Ensures text wraps correctly on smaller screens */
+    line-height: 1.2; /* Adjust line spacing for multi-line text */
 }
 
-/* Typing animation */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+/* Blinking cursor */
+.blinking-cursor::after {
+    content: "|";
+    animation: blink-caret 0.75s step-end infinite;
+    color: #ff5733; /* Color of the cursor */
 }
 
-/* Blinking cursor animation */
 @keyframes blink-caret {
     50% {
-        border-color: transparent;
+        opacity: 0;
     }
 }
+
 
 /* Styling for Navbar Brand */
 .navbar-brand h2 {
