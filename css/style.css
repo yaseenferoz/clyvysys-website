@@ -143,7 +143,7 @@ textarea::placeholder {
 
 
 .logo h1 {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inconsolata', monospace;
     /* Replace with your preferred font */
 }
 
@@ -184,7 +184,7 @@ nav ul li a {
 .hero-content h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inconsolata', monospace;
     /* Or your preferred font */
 }
 
@@ -231,7 +231,7 @@ nav ul li a {
 #services h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
 
 .service-cards-home {
@@ -306,7 +306,9 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
+.navbar-nav .nav-link {
+    font-size: 1.5em;
+}
 /* Adjusting header and navigation for mobile */
 @media (max-width: 768px) {
     header {
@@ -478,7 +480,7 @@ footer a:hover {
 
 /* Logo Styling */
 .navbar-brand {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inconsolata', monospace;
     /* Choose a modern font */
     font-weight: bold;
     font-size: 30px !important;
@@ -684,7 +686,7 @@ footer a:hover {
 
 /* Typing Effect */
 .typing-effect {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Inconsolata', monospace;
     display: inline-block;
     max-width: 100%;
     overflow-wrap: break-word; /* Ensures text wraps correctly on smaller screens */
@@ -709,7 +711,7 @@ footer a:hover {
 .navbar-brand h2 {
     display: inline-block;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     /* Adjust based on your desired size */
 }
 
@@ -718,7 +720,7 @@ footer a:hover {
     display: inline-block;
     vertical-align: bottom;
     /* Aligns with the baseline of 'Clyvy' */
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     /* Matches the font size of 'Clyvy' */
     overflow: hidden;
     white-space: nowrap;
