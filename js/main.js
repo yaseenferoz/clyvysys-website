@@ -117,3 +117,86 @@ window.addEventListener("scroll", function () {
     const header = document.querySelector("header");
     header.style.backgroundColor = window.scrollY > 50 ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0)";
 });
+
+
+// Function to open the modal
+function openModal() {
+    const modal = document.getElementById("enquiry-modal");
+    modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+    const modal = document.getElementById("enquiry-modal");
+    modal.style.display = "none";
+}
+
+// Close the modal when clicking outside the modal content
+window.addEventListener("click", function(event) {
+    const modal = document.getElementById("enquiry-modal");
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+document.getElementById("my-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const selectedServices = Array.from(document.querySelectorAll('input[name="services[]"]:checked'))
+                                  .map(checkbox => checkbox.value)
+                                  .join(", ");
+    alert("Selected services: " + selectedServices);
+});
+var form = document.getElementById("my-form-enquiry");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status-enquiry");
+    var data = new FormData(form);
+
+    // Disable the submit button and show sending status
+    var submitButton = document.getElementById("my-form-button-enquiry");
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
+
+    // Clear previous status
+    status.innerHTML = "";
+    
+    try {
+        let response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset(); // Clear the form fields
+            setTimeout(() => {
+                closeModal(); // Close the modal after submission
+                status.innerHTML = ""; // Clear the status message after closing
+            }, 2000); // Wait for 2 seconds before closing
+        } else {
+            response.json().then(data => {
+                if (data.errors) {
+                    status.innerHTML = data.errors.map(error => error.message).join(", ");
+                } else {
+                    status.innerHTML = "Oops! There was a problem submitting your form.";
+                }
+            });
+        }
+    } catch (error) {
+        status.innerHTML = "Oops! There was a problem submitting your form.";
+    } finally {
+        // Re-enable the submit button and reset its text
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
+    }
+}
+
+form.addEventListener("submit", handleSubmit);
+
+// Close Modal function
+function closeModal() {
+    document.getElementById("enquiry-modal").style.display = "none";
+}
