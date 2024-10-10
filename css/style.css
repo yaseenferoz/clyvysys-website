@@ -69,7 +69,10 @@ label {
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
 }
-
+.list-unstyled {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
 /* Apply the coding font to the brand name and symbols */
 .navbar-brand {
 
@@ -769,18 +772,14 @@ footer a:hover {
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: linear-gradient(135deg, #1e3c72, #007bff);
+    color: linear-gradient(135deg, #1e3c72, #007bff);
+
     border: none;
     border-radius: 50px;
     cursor: pointer;
     z-index: 1000;
-    border: none;
-    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 

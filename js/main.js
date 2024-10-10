@@ -200,3 +200,11 @@ form.addEventListener("submit", handleSubmit);
 function closeModal() {
     document.getElementById("enquiry-modal").style.display = "none";
 }
+document.addEventListener("contextmenu", (e) => e.preventDefault()); // Disables right-click
+document.addEventListener("keydown", (e) => {
+   if (e.key === "F12" || 
+       (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+       (e.ctrlKey && e.key === "U")) {
+      e.preventDefault(); // Disables F12, Ctrl+Shift+I/J, and Ctrl+U
+   }
+});
