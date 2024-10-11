@@ -953,3 +953,6 @@ button.btn-primary:hover {
 #services-options input[type="checkbox"] {
     margin-right: 5px; /* Adjusts spacing between checkbox and text */
 }
+.tawk-icon-right{
+    display: none;
+}
