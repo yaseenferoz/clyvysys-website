@@ -75,9 +75,7 @@ label {
 }
 /* Apply the coding font to the brand name and symbols */
 .navbar-brand {
-
     display: flex !important;
-
 }
 
 /* Style for symbols to differentiate from the main text */
@@ -98,7 +96,6 @@ label {
     /* Secondary color to differentiate it */
 }
 
-/* Initial transparent header */
 /* Initial transparent header */
 header {
     position: sticky;
@@ -162,8 +159,6 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-
-/* Hero Section Styling */
 /* Hero Section Styling */
 #hero {
     background: linear-gradient(135deg, #1e3c72, #007bff);
@@ -188,7 +183,6 @@ nav ul li a {
     font-size: 2.5em;
     margin-bottom: 10px;
     font-family: 'Inconsolata', monospace;
-    /* Or your preferred font */
 }
 
 .hero img {
@@ -390,7 +384,6 @@ footer a:hover {
 }
 
 /* Capability Card Styling */
-/* Capability Card Styling with Equal Heights */
 .capability-card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -421,7 +414,6 @@ footer a:hover {
     font-size: 0.95em;
     margin-bottom: 0;
     flex-grow: 1;
-    /* Ensures that the paragraph takes up available space for uniformity */
 }
 
 /* Service Card Styling */
