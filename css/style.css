@@ -645,7 +645,11 @@ footer a:hover {
         border-radius: 8px;
         z-index: 1;
     }
+    .navbar-brand {
 
+       display: none !important;
+    }
+    
 }
 
 #cookie-consent {
@@ -1002,4 +1006,11 @@ button.btn-primary:hover {
 }
 .fa-brands {
     color: #0056b3; 
+}
+.logo-img {
+    width: 86px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 3.2rem;
+    margin-bottom: 1.2rem;
+
 }
