@@ -1014,3 +1014,23 @@ button.btn-primary:hover {
     margin-bottom: 1.2rem;
 
 }
+/* Clients Section Styling */
+.client-logo {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px; /* Rounded corners for logos */
+}
+
+.client-logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+section h2 {
+    font-weight: bold;
+}
+
+.client-section p {
+    font-size: 16px;
+    margin-top: 10px;
+}
